@@ -3,7 +3,7 @@
 import { connect } from 'cloudflare:sockets';
 
 // 建议修改为自己的 UUID
-let userID = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
+let userID = 'd342d11e-d424-4583-b36e-524ab1f0afa4';
 
 // 生成配置文件的 CF 优选 IP
 const bestCFIP = "www.gov.se"
@@ -42,7 +42,6 @@ export default {
             apiHost = env.API_HOST || apiHost;
             const upgradeHeader = request.headers.get('Upgrade');
             if (!upgradeHeader || upgradeHeader !== 'websocket') {
-              console.log(request);
                 const url = new URL(request.url);
                 switch (url.pathname) {
                     case '/cf':
